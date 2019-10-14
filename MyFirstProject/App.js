@@ -13,7 +13,11 @@ import {
   View
 } from 'react-native';
 
+import Amplify from "aws-amplify";
+import { withAuthenticator } from "aws-amplify-react-native";
+import awsConfig from "./aws-exports";
 
+Amplify.configure(awsConfig);
 
 const App = () => {
   return (
@@ -31,4 +35,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default withAuthenticator(App);
