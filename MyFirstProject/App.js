@@ -13,16 +13,13 @@ import {
   View
 } from 'react-native';
 
-import Amplify from "aws-amplify";
-import { withAuthenticator } from "aws-amplify-react-native";
-import awsConfig from "./aws-exports";
-
-Amplify.configure(awsConfig);
+import Login from "./login";
 
 const App = () => {
   return (
         <View style={styles.view}>
-            <Text>Xebia Engineering is Awesome</Text>
+          <Login />
+            {/* <Text>Xebia Engineering is Awesome</Text> */}
         </View>
   );
 };
@@ -35,4 +32,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withAuthenticator(App);
+export default App;
